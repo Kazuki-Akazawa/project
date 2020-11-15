@@ -8,10 +8,12 @@ Udacity Github Project
 Edit bikeshare.py using Github
 
 ### Files used
-bikeshare data as below
+bikeshare data as below:
 chicago.csv
 new_york_city.csv
 washington.csv
+Analysis file as below:
+bikeshare.py
 
 ### Credits
 It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
