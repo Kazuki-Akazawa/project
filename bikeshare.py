@@ -21,14 +21,14 @@ def get_filters():
     while city not in(CITY_DATA.keys()):
         print('\nInvalid input\n')
         city = input('Please select the city name: Chicago, New York City or Washington').lower()
-             
-       
+
+
     # TO DO: get user input for month (all, january, february, ... , june)
     time = input('Which filters do you want to use? month, day, all or none?').lower()
     while time not in(['month', 'day', 'all', 'none']):
         print('\nInvalid input\n')
         time = input('Which filters do you want to use? month, day, all or none?').lower()
-    
+
     months = ['january', 'feburary', 'march', 'april', 'may', 'june']
     if time == 'month' or time == 'all':
         month = input('Which month do you choose? January, Feburary, March, April, May or June?').lower()
@@ -37,7 +37,7 @@ def get_filters():
             month = input('Which month do you choose? January, Feburary, March, April, May or June?').lower()
     else:
         month = 'all'
-        
+
     # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
     days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
     if time == 'day' or time == 'all':
@@ -67,7 +67,7 @@ def load_data(city, month, day):
     df['Start Time'] = pd.to_datetime(df['Start Time'])
     df['month'] = df['Start Time'].dt.month
     df['day_of_week'] = df['Start Time'].dt.day_name()
-    
+
     if month != 'all':
         months = ['january', 'feburary', 'march', 'april', 'may', 'june']
         month = months.index(month) + 1
@@ -159,7 +159,7 @@ def user_stats(df):
         gender = df['Gender'].value_counts()
         print(gender)
     else:
-        print('No gender info!')
+        print('No gender infomation!')
 
     # TO DO: Display earliest, most recent, and most common year of birth
     if 'Birth_Year' in df:
@@ -170,7 +170,7 @@ def user_stats(df):
         common_birth = df['Birth_Year'].mode()[0]
         print(common_birth)
     else:
-        print('No birth year info!')
+        print('No birth year infomation!')
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
@@ -184,7 +184,7 @@ def user_stats(df):
             view_display = input("Do you wish to continue?: ").lower()
             if view_display.lower() != 'yes':
                 break
-            
+
 def main():
     while True:
         city, month, day = get_filters()
